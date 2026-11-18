@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fcf8f2">
+  <meta name="description" content="18 道相亲情境题，看看你的相亲人格，以及什么样的另一半和你聊得来。">
+  <title>两人份 · 相亲人格测试</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <button type="button" class="brand" data-action="home" aria-label="两人份首页">
+        <span class="brand-mark" aria-hidden="true"></span><span>两人份</span>
+      </button>
+      <nav aria-label="网站导航">
+        <button type="button" class="nav-link" data-action="about">测试说明</button>
+        <button type="button" class="nav-link nav-demo" data-action="demo">结果示例 <span aria-hidden="true">↗</span></button>
+      </nav>
+    </div>
+  </header>
+  <main id="app" class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true"></span>两人份相亲小剧场</p>
+        <h1 id="page-title" tabindex="-1">相亲这场戏，<br><em>你是哪种角色？</em></h1>
+        <p class="hero-intro">你等的那条消息、没说出口的委屈，藏着怎样的你？<br class="wide-only">走过 18 个相亲场景，看看谁让你心动，谁更能和你过好普通的一天。</p>
+        <div class="hero-actions">
+          <button type="button" class="button primary" data-action="start-single">测我的相亲人格 <span aria-hidden="true">→</span></button>
+          <button type="button" class="button quiet" data-action="start-pair">双人一起测</button>
+          <p class="hero-note">36 个场景中抽 18 题 <span aria-hidden="true">·</span> 另有选填资料</p>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img src="./first-date.webp" width="960" height="1200" alt="咖啡馆里约会的两个人，一个兴奋地讲故事，一个捧着杯子笑" fetchpriority="high">
+        <button type="button" class="example-peek profile-peek" data-action="demo" aria-label="查看暖灯守夜人的结果示例">
+          <span class="peek-label">人格卡示例 <span aria-hidden="true">↗</span></span>
+          <strong>暖灯守夜人 <span>QPHI</span></strong>
+          <span class="peek-label">慢热观察 · 提前计划 · 先留在心里 · 需要留白</span>
+        </button>
+      </figure>
+    </section>
+    <section class="topics story-topics" aria-labelledby="topics-title">
+      <h2 id="topics-title">从初次见面到认真在一起</h2>
+      <ul>
+        <li>初次见面</li><li>约下一次</li><li>心动以后</li><li>相处日常</li><li>闹别扭之后</li><li>认真在一起</li>
+      </ul>
+    </section>
+    <noscript><p>启用浏览器的 JavaScript 后，就可以开始答题。</p></noscript>
+  </main>
+  <footer class="wrap site-footer">
+    <p>答卷仅在当前页面处理。收入和家庭情况可以跳过。</p>
+    <button type="button" class="text-button" data-action="about">研究与计分</button>
+  </footer>
+  <dialog id="about" aria-labelledby="about-title">
+    <div class="dialog-top">
+      <h2 id="about-title">测试说明</h2>
+      <form method="dialog"><button class="icon-button" aria-label="关闭说明">×</button></form>
+    </div>
+    <p>36 个原创场景分成 18 个主题，每次从每个主题抽一个场景，共 18 题。12 题描述四个相处维度，6 题描述沟通和支持方式。每个维度 3 题，按多数选择呈现倾向；换场景也可能改变回答，这只是当次自我观察，不是经过信效度验证的心理量表。<br>另有个人、家庭与择偶期待等选填资料。结果先给出条件对照表，再分别介绍你的相处类型和建议了解的伴侣类型。年龄按自己的年龄段与相邻段举例，学历和收入按自己的资料给出认识起点，身高与眼缘沿用偏好并单独标明。工作、家庭与人格建议结合实际情况和情境回答生成。</p>
+    <p>双人模式在同一部设备上分开作答，逐项检查第一位的要求和第二位的条件，也反过来检查。互动和共同生活安排由两边的答案一起比较。</p>
+    <details>
+      <summary>研究资料与计分规则</summary>
+      <p>参考 Big Five 开源项目的模块结构、Gottman 的互动话题，以及中国婚恋研究选择观察方向。18 道原创题并非 Big Five 或 MBTI 量表，资料没有验证本站的题目与推荐规则。双人匹配分是符合项占已可比较项的比例，至少有六项可比较时才出分。「不限」不计，未填的项目和需要谈出同城计划的情形记为待确认。双方对是否要孩子有明确分歧时，先呈现议题。</p>
+      <p>单人报告没有候选人数据库，不估算婚配价值或成功概率。职业不能推断人品，年龄、身高和学历不能单独决定适配。想尝试收入更高一档时，按你填的最低预期或自己的收入档向上一档举例，双方意愿仍需要实际了解。</p>
+      <ul id="references"></ul>
+    </details>
+  </dialog>
+  <dialog id="restart" aria-labelledby="restart-title">
+    <h2 id="restart-title">结束本次测试？</h2>
+    <p>返回首页会清空这次的答卷。</p>
+    <form method="dialog" class="dialog-actions">
+      <button class="button quiet" value="cancel">留在这里</button>
+      <button class="button primary" value="reset">清空并返回</button>
+    </form>
+  </dialog>
+  <dialog id="share-card" aria-labelledby="share-title">
+    <div class="dialog-top">
+      <h2 id="share-title">保存分享卡</h2>
+      <form method="dialog"><button class="icon-button" aria-label="关闭分享卡">×</button></form>
+    </div>
+    <p>图片只包含结果概览和题数。请在双方都同意后，再保存分享。</p>
+    <label class="option"><input id="share-consent" type="checkbox"><span>我们都同意生成这张分享卡</span></label>
+    <div class="dialog-actions"><button id="save-card" class="button primary" type="button" disabled>保存图片</button></div>
+  </dialog>
+  <div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+</body>
+</html>
