@@ -30,7 +30,7 @@
     try { localStorage.setItem('xq_auth_until', String(Date.now() + msToBjMidnight())); } catch (e) {}
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function bootGate() { try {
     var wrap = document.createElement('div');
     wrap.id = 'xq-gate';
     wrap.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:#fcf8f2;display:flex;align-items:center;justify-content:center;font-family:system-ui,"Microsoft YaHei",sans-serif;';
@@ -68,5 +68,8 @@
     }
     btn.addEventListener('click', tryUnlock);
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryUnlock(); });
-  });
+  } catch (e) { root.style.visibility = ''; }}
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootGate); else bootGate();
+  // 安全网：3 秒后若密码框没出现，强制显示页面（宁可无门禁，不可白屏）
+  setTimeout(function () { if (!document.getElementById('xq-gate') && root.style.visibility === 'hidden') root.style.visibility = ''; }, 3000);
 })();
